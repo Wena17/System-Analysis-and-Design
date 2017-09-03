@@ -6,12 +6,12 @@ Each column apart from the first two constitute a rule. The condition for a rule
 
 * "Y" if the condition must be true for this rule to apply
 * "N" if the condition must be false for the rule to apply
-* "*" (asterisk) if the condition is irrelevant for this rule, i.e. it could be either true or false.
+* blank/unmarked if the condition is irrelevant for this rule, i.e. it could be either true or false.
 
 The action for a rule can be marked:
 
 * "X" if the action is to be taken when the rule applies
-* "-" if the action is not to be taken when the rule applies.
+* blank/unmarked if the action is not to be taken when the rule applies.
 
 Note: Not all rules have to be implemented in the first version of the system. Rules that are not going to be implemented have their numbers put in parentheses, e.g. "(5)".
 
@@ -19,14 +19,14 @@ Note: Not all rules have to be implemented in the first version of the system. R
 
 |   | Conditions and Actions | 1 | 2 | 3 | (4) | (5) | (6) | (7) |
 |---|------------------------|---|---|---|-----|-----|-----|-----|
-| C | Item type has minimum inventory level | N | Y | Y | * | * | * | * |
-| C | Item quantity under minimum inventory level | * | N | Y | * | * | * | * |
-| C | Item has expiry date | * | * | * | N | Y | Y | Y |
-| C | Item near expiry date | * | * | * | * | N | Y | N |
-| C | Item over expiry date | * | * | * | * | N | N | Y |
-| A | Add item to shopping list | - | - | X | - | - | - | - | 
-| A | Add item to _close to expiry_ list | - | - | - | - | - | X | - | 
-| A | Advise user to discard expired item | - | - | - | - | - | - | X | 
+| C | Item type has minimum inventory level | N | Y | Y | | | | |
+| C | Item quantity under minimum inventory level | | N | Y | | | | |
+| C | Item has expiry date | | | | N | Y | Y | Y |
+| C | Item near expiry date | | | | | N | Y | N |
+| C | Item over expiry date | | | | | N | N | Y |
+| A | Add item to shopping list | | | X | | | | | 
+| A | Add item to _close to expiry_ list | | | | | | X | | 
+| A | Advise user to discard expired item | | | | | | | X | 
 
 ## Use case: Add delivery to inventory
 
