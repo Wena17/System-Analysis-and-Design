@@ -17,6 +17,8 @@ Note: Not all rules have to be implemented in the first version of the system. R
 
 ## Use case: Take inventory
 
+Rules are applied for each updated item.
+
 |   | Conditions and Actions | 1 | 2 | 3 | (4) | (5) | (6) | (7) |
 |---|------------------------|---|---|---|-----|-----|-----|-----|
 | C | Item type has minimum inventory level | N | Y | Y | | | | |
@@ -30,9 +32,31 @@ Note: Not all rules have to be implemented in the first version of the system. R
 
 ## Use case: Add delivery to inventory
 
-TODO
+Rules are applied for each item in the delivery as it is added to the inventory.
 
-## Use case: Send order to supplier
+|   | Conditions and Actions | 1 | 2 | 3 | 4 | 5 |
+|---|------------------------|---|---|---|---|---|
+| C | Item was ordered | N | Y | Y | Y | |
+| C | Quantity matches order | | N | Y | Y | |
+| C | Quantity is too large or too small | | Y | N | N | |
+| C | Price matches price list | | Y | Y | N | |
+| C | Quality is ok | Y | Y | Y | Y | N |
+| A | Add item to complaints | X | X | | X | X |
+| A | Update item quantity in inventory | X | X | X | X | |
+| A | Return/discard item | | | | | X |
+
+After all items in the delivery have been processed, the following rules are applied.
+
+|   | Conditions and Actions          | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 |
+|---|---------------------------------|---|---|---|---|---|---|---|---|
+| C | All items from order delivered? | N | N | N | N | Y | Y | Y | Y |
+| C | Any complaints?                 | N | N | Y | Y | N | N | Y | Y |
+| C | Order prepaid?                  | N | Y | N | Y | N | Y | N | Y |
+| A | Pay delivered items             | X |   | X |   | X |   | X |   |
+| A | Contact supplier                | X | X | X | X |   |   |   | X |
+
+
+## Use case: Place order
 
 TODO
 
