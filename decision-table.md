@@ -22,7 +22,7 @@ Note: Not all rules have to be implemented in the first version of the system. R
 | C | Item type has minimum inventory level | N | Y | Y | | | | |
 | C | Item quantity under minimum inventory level | | N | Y | | | | |
 | C | Item has expiry date | | | | N | Y | Y | Y |
-| C | Item near expiry date | | | | | N | Y | N |
+| C | Item near expiry date | | | | | N | Y | |
 | C | Item over expiry date | | | | | N | N | Y |
 | A | Add item to shopping list | | | X | | | | | 
 | A | Add item to _close to expiry_ list | | | | | | X | | 
