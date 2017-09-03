@@ -13,12 +13,12 @@ The action for a rule can be marked:
 * "X" if the action is to be taken when the rule applies
 * "-" if the action is not to be taken when the rule applies.
 
-Note: Not all rules have to be implemented in the first version of the system.
+Note: Not all rules have to be implemented in the first version of the system. Rules that are not going to be implemented have their numbers put in parentheses, e.g. "(5)".
 
 ## Use case: Take inventory
 
-|   | Conditions and Actions | 1 | 2 | 3 | 4 | 5 | 6 | 7 |
-|---|------------------------|---|---|---|---|---|---|---|
+|   | Conditions and Actions | 1 | 2 | 3 | (4) | (5) | (6) | (7) |
+|---|------------------------|---|---|---|-----|-----|-----|-----|
 | C | Item type has minimum inventory level | N | Y | Y | * | * | * | * |
 | C | Item quantity under minimum inventory level | * | N | Y | * | * | * | * |
 | C | Item has expiry date | * | * | * | N | Y | Y | Y |
